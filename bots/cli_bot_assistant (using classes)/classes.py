@@ -31,14 +31,12 @@ class Record:
     adding/deleting/editing optional fields and storing the required field Name.
     """
 
-    def __init__(self, name, phone=None):
-        self.name = name
+    def __init__(self, name):
+        self.name = Name(name)
         self.phones = []
-        if phone:
-            self.add_phone(phone)
 
     def add_phone(self, phone):
-        self.phones.append(phone)
+        self.phones.append(Phone(phone))
 
     def change_phone(self, phone, new_phone):
         for item in self.phones:
