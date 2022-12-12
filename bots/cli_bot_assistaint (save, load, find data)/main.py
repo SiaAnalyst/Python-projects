@@ -17,10 +17,12 @@ def input_error(func):
         except IndexError:
             return 'Please type: name and phone number'
         except TypeError:
-            return "No command found. Please type one of this: hello, add [Name] [phone], change [Name] [phone], " \
-                   "phone [Name], delete [Name] [phone], show all, exit, good bye, close. "
+            return "No command found. Please type one of this: hello, add [Name] [phone1] [phone2]...[birthday], " \
+                   "change [Name] [old_phone] [new_phone], phone [Name], delete [Name] [phone], birthday [Name], " \
+                   "pagination [page], search [content], show all, exit, good bye, close. "
         except Exception as error:
             return error
+
     return wrapper
 
 
@@ -271,7 +273,7 @@ def incorrect_command():
     """
     return "No command found. Please type one of this: hello, add [Name] [phone1] [phone2]...[birthday], " \
            "change [Name] [old_phone] [new_phone], phone [Name], delete [Name] [phone], birthday [Name], " \
-           "pagination [page], show all, exit, good bye, close. "
+           "pagination [page], search [content], show all, exit, good bye, close. "
 
 
 def main():
